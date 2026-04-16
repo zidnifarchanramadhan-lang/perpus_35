@@ -1,0 +1,60 @@
+/* Body & Font */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4; 
+    margin-top: 50px;
+    text-align: center;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+p a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+p a:hover {
+    text-decoration: underline;
+}
+
+form{
+    background: #ffffff;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+form td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
