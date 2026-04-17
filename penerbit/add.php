@@ -15,11 +15,11 @@
 
 			<tr> 
 				<td>Nama Penerbit</td>
-				<td><input type="text" name="nama_penerbit"></td>
+				<td><input type="text" name="nama_penerbit" required></td>
 			</tr>
 			<tr> 
 				<td>Alamat</td>
-				<td><textarea name="alamat" rows="4" cols="21"></textarea></td>
+				<td><textarea name="alamat" rows="4" cols="21" required></textarea>></textarea></td>
 			</tr>
 			
 			<tr> 

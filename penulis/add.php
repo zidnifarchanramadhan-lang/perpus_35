@@ -14,11 +14,11 @@
 		<table width="100%" border="0">
 			<tr> 
 				<td>Nama Penulis</td>
-				<td><input type="text" name="nama_penulis"></td>
+				<td><input type="text" name="nama_penulis"required></td>
 			</tr>
 			<tr> 
 				<td>Biodata</td>
-				<td><textarea name="biodata" rows="4" cols="21"></textarea></td>
+				<td><textarea name="biodata" rows="4" cols="21"required></textarea></td>
 			</tr>
 			
 			<tr> 

@@ -16,7 +16,7 @@
 		
 			<tr> 
 				<td>Nama Kategori</td>
-				<td><input type="text" name="nama_kategori"></td>
+				<td><input type="text" name="nama_kategori" required></td>
 			</tr>
 			<tr> 
 				<td></td>

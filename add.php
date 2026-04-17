@@ -14,23 +14,23 @@
 		<table width="100%" border="0">
 			<tr> 
 				<td>Judul</td>
-				<td><input type="text" name="judul"></td>
+				<td><input type="text" name="judul"required></td>
 			</tr>
 			<tr> 
 				<td>ISBN</td>
-				<td><input type="text" name="isbn"></td>
+				<td><input type="text" name="isbn"required></td>
 			</tr>
 			<tr> 
 				<td>Tahun Terbit</td>
-				<td><input type="text" name="tahun_terbit"></td>
+				<td><input type="text" name="tahun_terbit"required></td>
 			</tr>
 			<tr> 
 				<td>Halaman</td>
-				<td><input type="text" name="halaman"></td>
+				<td><input type="text" name="halaman"required></td>
 			</tr>
 			<tr> 
 				<td>Ringkasan</td>
-				<td><textarea name="ringkasan" rows="4" cols="21"></textarea></td>
+				<td><textarea name="ringkasan" rows="4" cols="21"required></textarea></td>
 			</tr>
 			<tr> 
     <td>Penulis</td>
