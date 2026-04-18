@@ -7,7 +7,7 @@
 <div class="from">
 	<h2>Tambah Buku</h2>
 	<p>
-		<a href="index.php">back</a>
+		<button onclick="history.back()">← Back</button>
 	</p>
 
 	<form action="addAction.php" method="post" name="add">
@@ -22,11 +22,11 @@
 			</tr>
 			<tr> 
 				<td>Tahun Terbit</td>
-				<td><input type="text" name="tahun_terbit"required></td>
+				<td><input type="text" name="tahun_terbit" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder=" CONTOH 2020"></td>
 			</tr>
 			<tr> 
 				<td>Halaman</td>
-				<td><input type="text" name="halaman"required></td>
+				<td><input type="text" name="halaman"required onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="0"></td>
 			</tr>
 			<tr> 
 				<td>Ringkasan</td>
@@ -35,7 +35,7 @@
 			<tr> 
     <td>Penulis</td>
     <td>
-        <select name="id_penulis">
+        <select name="id_penulis"required>
             <option value="">-- Pilih --</option>
             <?php
             include "dbConnection.php";
@@ -51,7 +51,7 @@
 <tr> 
     <td>Kategori</td>
     <td>
-        <select name="id_kategori" >
+        <select name="id_kategori" required >
             <option value="">-- Pilih --</option>
             <?php
             include "dbConnection.php";
@@ -67,7 +67,7 @@
 <tr> 
     <td>Penerbit</td>
     <td>
-        <select name="id_penerbit" >
+        <select name="id_penerbit" required >
             <option value="">-- Pilih --</option>
             <?php
             include "dbConnection.php";
@@ -82,7 +82,8 @@
 
 			<tr> 
 				<td></td>
-				<td><input type="submit" name="submit" value="Simpan"></td>
+				<td><input type="submit" name="submit" value="Save"></td>
+                
 			</tr>
 		</table>
 	</form>

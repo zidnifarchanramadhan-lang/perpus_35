@@ -7,7 +7,7 @@
 <body>
 	<h2>Tambah Penulis</h2>
 	<p>
-		<a href="index.php">back</a>
+		<button onclick="history.back()">← Back</button>
 	</p>
 
 	<form action="addAction.php" method="post" name="add">
