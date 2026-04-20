@@ -191,3 +191,181 @@ h3 {
     background: #b8b8b8;
     pointer-events: none;
 }
+
+/* =============================================
+   RATING & ULASAN — tambahan
+   ============================================= */
+
+/* Bintang di tabel */
+.td-rating { text-align:center; }
+.star-display { color:#f5a623; font-size:16px; letter-spacing:1px; }
+.td-rating small { display:block; font-size:11px; color:#888; }
+.no-rating { font-size:12px; color:#bbb; }
+
+/* Tombol ulasan di tabel */
+.btn-ulasan {
+    display:block;
+    background:#DD9E59;
+    color:white;
+    padding:4px 10px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:5px;
+    text-align:center;
+    transition:.2s;
+}
+.btn-ulasan:hover { background:#c4854a; }
+.td-action { white-space:nowrap; }
+.td-action a { display:block; margin:2px 0; }
+
+/* TOAST */
+.toast {
+    position:fixed; top:20px; right:20px;
+    background:#DD9E59; color:white;
+    padding:12px 22px; border-radius:10px;
+    font-weight:600; font-size:14px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
+    opacity:0; transform:translateY(-15px);
+    transition:all .35s ease; z-index:9999;
+}
+.toast.show { opacity:1; transform:translateY(0); }
+.toast.error { background:#c0392b; }
+.toast.success { background:#27ae60; }
+
+/* =============================================
+   HALAMAN ULASAN
+   ============================================= */
+.ulasan-wrap {
+    width:85%; margin:30px auto 50px auto;
+}
+.back-link {
+    display:inline-block; margin-bottom:16px;
+    color:#DD9E59; font-weight:600; text-decoration:none; font-size:14px;
+}
+.back-link:hover { text-decoration:underline; }
+
+/* Kartu detail buku */
+.book-detail-card {
+    background:white; border-radius:14px;
+    padding:24px; margin-bottom:24px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    display:flex; gap:24px; align-items:flex-start;
+}
+.book-detail-left { display:flex; gap:16px; flex:1; }
+.book-cover-icon { font-size:56px; flex-shrink:0; }
+.book-meta h2 { color:#6a4c4c; font-size:20px; margin-bottom:8px; }
+.book-meta p { font-size:13px; color:#555; margin-bottom:4px; }
+.ringkasan-text {
+    margin-top:10px; font-size:13px; color:#666;
+    line-height:1.7; border-top:1px solid #f0e8d8; padding-top:10px;
+}
+
+/* Rating agregat */
+.rating-agg-box {
+    text-align:center; min-width:110px;
+    border-left:1px solid #f0e8d8; padding-left:20px;
+}
+.rating-big-num { font-size:44px; font-weight:700; color:#f5a623; line-height:1; }
+.rating-big-stars { font-size:22px; color:#f5a623; letter-spacing:2px; margin:4px 0; }
+.rating-big-count { font-size:12px; color:#aaa; }
+.rating-empty-msg { font-size:12px; color:#aaa; font-style:italic; line-height:1.6; }
+
+/* Form ulasan */
+.ulasan-form-wrap {
+    background:white; border-radius:14px; padding:24px;
+    margin-bottom:24px; box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+.ulasan-form-wrap h3 { color:#6a4c4c; margin-bottom:18px; font-size:17px; }
+.u-form-group { margin-bottom:16px; }
+.u-form-group label {
+    display:block; margin-bottom:6px;
+    font-weight:600; font-size:13px; color:#444;
+}
+.u-form-group input[type="text"],
+.u-form-group textarea {
+    width:100%; padding:9px 12px;
+    border:1px solid #ddd; border-radius:8px;
+    font-size:13px; font-family:inherit;
+    transition:.2s;
+}
+.u-form-group input:focus,
+.u-form-group textarea:focus { border-color:#DD9E59; outline:none; }
+
+/* Bintang picker interaktif */
+.star-picker { display:flex; gap:6px; margin-bottom:6px; }
+.star-picker span {
+    font-size:34px; color:#ddd; cursor:pointer;
+    transition:color .12s, transform .12s; line-height:1;
+}
+.star-picker span:hover { transform:scale(1.2); color:#f5a623; }
+.star-picker span.on { color:#f5a623; }
+.star-desc { font-size:12px; color:#999; font-style:italic; min-height:18px; }
+
+/* Tombol kirim & batal */
+.btn-kirim {
+    background:#DD9E59; color:white; border:none;
+    padding:10px 22px; border-radius:8px; font-size:14px;
+    font-weight:600; cursor:pointer; transition:.2s;
+}
+.btn-kirim:hover { background:#c4854a; }
+.btn-batal {
+    margin-left:12px; color:#888; font-size:13px;
+    text-decoration:none; font-weight:500;
+}
+
+/* Daftar ulasan */
+.ulasan-list-wrap { }
+.ulasan-list-wrap h3 { color:#6a4c4c; margin-bottom:16px; font-size:17px; }
+.ulasan-kosong {
+    text-align:center; color:#aaa; font-size:13px;
+    font-style:italic; padding:24px;
+    border:1px dashed #ddd; border-radius:10px;
+}
+
+/* Kartu satu ulasan */
+.ulasan-card {
+    background:white; border-radius:12px; padding:16px 20px;
+    margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.07);
+    transition:.2s;
+}
+.ulasan-card:hover { box-shadow:0 5px 18px rgba(0,0,0,0.12); }
+.ulasan-card-header {
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:12px; flex-wrap:wrap;
+}
+.u-avatar {
+    width:40px; height:40px; border-radius:50%;
+    background:#DD9E59; color:white;
+    font-size:16px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+}
+.u-info { flex:1; }
+.u-info strong { display:block; font-size:14px; color:#333; }
+.u-stars { font-size:15px; letter-spacing:1px; margin-top:2px; }
+.star-5,.star-4 { color:#f5a623; }
+.star-3 { color:#f0c040; }
+.star-2 { color:#e08030; }
+.star-1 { color:#c0392b; }
+.u-right { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+.u-time { font-size:11px; color:#aaa; }
+.u-badge {
+    background:#fff4e6; color:#c4854a;
+    font-size:11px; font-weight:600;
+    padding:2px 8px; border-radius:20px;
+    border:1px solid #f0dcc8;
+}
+.ulasan-isi {
+    font-size:13px; color:#555; line-height:1.7;
+    padding:10px 14px; background:#fafafa;
+    border-left:3px solid #DD9E59;
+    border-radius:0 6px 6px 0; margin-bottom:10px;
+}
+.ulasan-card-footer { text-align:right; }
+.btn-hapus-u {
+    font-size:12px; color:#c0392b;
+    text-decoration:none; font-weight:500;
+}
+.btn-hapus-u:hover { text-decoration:underline; }
