@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Apr 2026 pada 08.54
+-- Waktu pembuatan: 20 Apr 2026 pada 10.26
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -39,6 +39,13 @@ CREATE TABLE `buku` (
   `id_penerbit` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data untuk tabel `buku`
+--
+
+INSERT INTO `buku` (`id_buku`, `judul`, `isbn`, `tahun_terbit`, `halaman`, `ringkasan`, `id_penulis`, `id_kategori`, `id_penerbit`) VALUES
+(17, 'perempuan yang suka pergi sendirian', '1119', '2020', 22, 'bagus', 12, 10, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `kategori` (
   `id_kategori` int(10) NOT NULL,
   `nama_kategori` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
+(10, 'horor');
 
 -- --------------------------------------------------------
 
@@ -62,6 +76,13 @@ CREATE TABLE `penerbit` (
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `penerbit`
+--
+
+INSERT INTO `penerbit` (`id_penerbit`, `nama_penerbit`, `alamat`) VALUES
+(11, 'Gramedia', 'kedungsari');
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +94,37 @@ CREATE TABLE `penulis` (
   `nama_penulis` varchar(100) NOT NULL,
   `biodata` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `penulis`
+--
+
+INSERT INTO `penulis` (`id_penulis`, `nama_penulis`, `biodata`) VALUES
+(12, 'zidni farchan', 'kelahiran 2007');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `ulasan`
+--
+
+CREATE TABLE `ulasan` (
+  `id_ulasan` int(11) NOT NULL,
+  `id_buku` int(11) NOT NULL,
+  `nama_reviewer` varchar(100) NOT NULL,
+  `rating` tinyint(1) NOT NULL,
+  `ulasan` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `ulasan`
+--
+
+INSERT INTO `ulasan` (`id_ulasan`, `id_buku`, `nama_reviewer`, `rating`, `ulasan`, `created_at`) VALUES
+(1, 15, 'qq', 4, 'd', '2026-04-20 14:25:24'),
+(2, 16, 'qq', 3, 'nj', '2026-04-20 14:35:59'),
+(3, 17, 'zisz', 3, 'xxs', '2026-04-20 14:47:23');
 
 --
 -- Indexes for dumped tables
@@ -106,6 +158,13 @@ ALTER TABLE `penulis`
   ADD PRIMARY KEY (`id_penulis`);
 
 --
+-- Indeks untuk tabel `ulasan`
+--
+ALTER TABLE `ulasan`
+  ADD PRIMARY KEY (`id_ulasan`),
+  ADD KEY `idx_id_buku` (`id_buku`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -113,25 +172,31 @@ ALTER TABLE `penulis`
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_buku` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `penerbit`
 --
 ALTER TABLE `penerbit`
-  MODIFY `id_penerbit` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_penerbit` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `penulis`
 --
 ALTER TABLE `penulis`
-  MODIFY `id_penulis` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_penulis` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `ulasan`
+--
+ALTER TABLE `ulasan`
+  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

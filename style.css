@@ -315,7 +315,7 @@ h3 {
     text-decoration:none; font-weight:500;
 }
 
-/* Daftar ulasan */
+
 .ulasan-list-wrap { }
 .ulasan-list-wrap h3 { color:#6a4c4c; margin-bottom:16px; font-size:17px; }
 .ulasan-kosong {
@@ -324,7 +324,7 @@ h3 {
     border:1px dashed #ddd; border-radius:10px;
 }
 
-/* Kartu satu ulasan */
+
 .ulasan-card {
     background:white; border-radius:12px; padding:16px 20px;
     margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.07);
